@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Dashboard Container */
+.container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+table th,
+table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Parking Slot Indicator */
+.slot-available {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.slot-occupied {
+    background-color: #f44336;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
