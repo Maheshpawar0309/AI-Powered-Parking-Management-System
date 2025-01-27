@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parking Management Dashboard</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Real-Time Parking Management</h1>
+    <p>Available Slots: <span id="slots"></span></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>License Plate</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody id="logs">
+        </tbody>
+    </table>
+
+    <script>
+        const socket = io();
+        socket.on('update_dashboard', data => {
+            document.getElementById('slots').innerText = data.slots;
+
+            const logsTable = document.getElementById('logs');
+            logsTable.innerHTML = '';
+            data.logs.forEach(log => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${log.plate}</td>
+                    <td>${log.time_in}</td>
+                    <td>${log.time_out || '-'}</td>
+                    <td>${log.fee || '-'}</td>
+                `;
+                logsTable.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>
